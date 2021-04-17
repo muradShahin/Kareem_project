@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/teacher_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/teacherStudents"
+        tools:layout="@layout/teacher_student"
+        android:name="com.murad.kareem_school.views.teacher.dashboard.my_students.TeacherStudents"
+        android:label="TeacherStudents" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.murad.kareem_school.views.teacher.dashboard.main_screen.MainFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainFragment_to_teacherStudents"
+            app:destination="@id/teacherStudents" />
+        <action
+            android:id="@+id/action_mainFragment_to_lessonsView"
+            app:destination="@id/lessonsView" />
+        <action
+            android:id="@+id/action_mainFragment_to_examsTeacher"
+            app:destination="@id/examsTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/lessonsView"
+        android:name="com.murad.kareem_school.views.teacher.dashboard.lessons.LessonsView"
+        android:label="LessonsView" >
+        <action
+            android:id="@+id/action_lessonsView_to_addLesson2"
+            app:destination="@id/addLesson2"
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/addLesson2"
+        android:name="com.murad.kareem_school.views.teacher.dashboard.lessons.AddLesson"
+        android:label="AddLesson" >
+        <action
+            android:id="@+id/action_addLesson2_to_lessonsView"
+            app:destination="@id/lessonsView"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/createExam"
+        android:name="com.murad.kareem_school.views.teacher.dashboard.exams.CreateExam"
+        android:label="CreateExam"
+        >
+        <action
+            android:id="@+id/action_createExam_to_examsTeacher"
+            app:destination="@id/examsTeacher" />
+    </fragment>
+    <fragment
+        android:id="@+id/examsTeacher"
+        android:name="com.murad.kareem_school.views.teacher.dashboard.exams.ExamsTeacher"
+        android:label="ExamsTeacher"
+        app:popUpTo="@+id/mainFragment"
+        app:popUpToInclusive="true"
+        >
+        <action
+            android:id="@+id/action_examsTeacher_to_createExam"
+            app:destination="@id/createExam" />
+        <action
+            android:id="@+id/action_examsTeacher_to_examResults"
+            app:destination="@id/examResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/examResults"
+        android:name="com.murad.kareem_school.views.teacher.dashboard.exams.ExamResults"
+        android:label="ExamResults" >
+        <argument
+            android:name="exam"
+            app:argType="com.murad.kareem_school.models.exams.Exam" />
+    </fragment>
+</navigation>

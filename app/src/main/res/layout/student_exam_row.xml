@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="Exam"
+            type="com.murad.kareem_school.models.exams.Exam" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:cardElevation="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_2sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/exam_title_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{Exam.title}" />
+
+                <TextView
+                    android:id="@+id/exam_grade_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Grade:" + Exam.grade}' />
+
+                <TextView
+                    android:id="@+id/n_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{Exam.listOfAnswers.size() +" : questions"}' />
+
+
+                <Button
+                    android:id="@+id/see_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/take_exam"
+                    android:textAllCaps="false"
+                    android:theme="@style/ButtonStyleTextColor" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

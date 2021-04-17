@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "320709132175",
+    "project_id": "kareem-school",
+    "storage_bucket": "kareem-school.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320709132175:android:e5e82cbfa3d99c579895fa",
+        "android_client_info": {
+          "package_name": "com.murad.kareem_school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320709132175-iceurfudr31lsuh8q8rpm7j6lrqsub77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu-rcice3Th78ysok6AaRK3WaDbSo5hdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320709132175-iceurfudr31lsuh8q8rpm7j6lrqsub77.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

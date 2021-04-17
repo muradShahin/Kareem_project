@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/students_nav"
+    app:startDestination="@id/studentHome">
+
+    <fragment
+        android:id="@+id/studentHome"
+        tools:layout="@layout/student_home"
+        android:name="com.murad.kareem_school.views.study.student_home.StudentHome"
+        android:label="StudentHome" >
+        <action
+            android:id="@+id/action_studentHome_to_lessonFullScreen"
+            app:destination="@id/lessonFullScreen" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/lessonFullScreen"
+        tools:layout="@layout/lesson_full_screen"
+        android:name="com.murad.kareem_school.views.study.student_home.LessonFullScreen"
+        android:label="LessonFullScreen" >
+        <argument
+            android:name="lesson"
+            app:argType="com.murad.kareem_school.models.lessons.Lesson" />
+        <action
+            android:id="@+id/action_lessonFullScreen_to_fullScreenVideo"
+            app:destination="@id/fullScreenVideo" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullScreenVideo"
+        tools:layout="@layout/full_video_view"
+        android:name="com.murad.kareem_school.views.study.student_home.FullScreenVideo"
+        android:label="FullScreenVideo" >
+        <argument
+            android:name="uri"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.murad.kareem_school.views.study.filter.FilterFragment"
+        android:label="FilterFragment"
+        tools:layout="@layout/filter_view"
+        >
+        <action
+            android:id="@+id/action_filterFragment_to_lessonFullScreen"
+            app:destination="@id/lessonFullScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/examFragment"
+        tools:layout="@layout/exams_fragment"
+        android:name="com.murad.kareem_school.views.study.exams.ExamFragment"
+        android:label="ExamFragment" >
+        <action
+            android:id="@+id/action_examFragment_to_takeExam"
+            app:destination="@id/takeExam" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeExam"
+        android:name="com.murad.kareem_school.views.study.exams.TakeExam"
+        tools:layout="@layout/exam_hail"
+        android:label="TakeExam" >
+        <argument
+            android:name="exam"
+            app:argType="com.murad.kareem_school.models.exams.Exam" />
+        <action
+            android:id="@+id/action_takeExam_to_examFragment"
+            app:destination="@id/examFragment" />
+    </fragment>
+</navigation>

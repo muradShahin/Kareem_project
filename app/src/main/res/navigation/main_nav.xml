@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/login_View">
+    <fragment
+        android:id="@+id/createUserView"
+        android:name="com.murad.kareem_school.views.auth.register.CreateUserView"
+        tools:layout="@layout/create_user_view"
+        android:label="CreateUserView" >
+        <action
+            android:id="@+id/action_createUserView_to_login_View"
+            app:destination="@id/login_View" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_View"
+        tools:layout="@layout/login_view"
+        android:name="com.murad.kareem_school.views.auth.login.Login_View"
+        android:label="Login_View" >
+        <action
+            android:id="@+id/action_login_View_to_createUserView"
+            app:destination="@id/createUserView" />
+    </fragment>
+</navigation>

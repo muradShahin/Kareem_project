@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="passowrd">password</string>
+    <string name="passowrd_re">Repeat Password</string>
+    <string name="choose_Date">Birth Date</string>
+    <string name="create_user">"Create "</string>
+    <string name="login">Login</string>
+    <string name="signUpTxt">"Don't have an Account ? SignUp Now "</string>
+    <string name="role_str">Regist Your Account As:</string>
+    <string name="as_teacher">As a Teacher</string>
+    <string name="as_student">As a Student</string>
+    <string name="my_students">My Students</string>
+    <string name="all_students">All Students</string>
+    <string name="add_to_my_students">Add</string>
+    <string name="str_name">Hi Mr.Kareem</string>
+    <string name="lessons">Lessons</string>
+    <string name="studentsStr">Students</string>
+    <string name="statistics">Statistics</string>
+    <string name="hi">Hi</string>
+    <string name="no_lessonsStr">No Lessons</string>
+    <string name="lesson_content">Write about this lesson</string>
+    <string name="_upload_video">Upload Video</string>
+    <string name="upload_image">upload image</string>
+    <string name="lessons_title">Lesson Title</string>
+    <string name="submit_str">Submit</string>
+    <string name="more_details">more</string>
+    <string name="my_teachers">My Teachers</string>
+    <string name="lessons_all">All Lessons</string>
+    <string name="more_str">see more</string>
+    <string name="play_full">Full Screen</string>
+    <string name="exams">Exams</string>
+    <string name="exam_title">Exam Title</string>
+    <string name="question_str">Question ..</string>
+    <string name="next_str">Next</string>
+    <string name="prev_question">"Previous "</string>
+    <string name="submit">Submit</string>
+    <string name="see_results">Check Students Result</string>
+    <string name="take_exam">Take The Exam</string>
+    <string name="answer">Answer ...</string>
+</resources>
