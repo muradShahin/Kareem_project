@@ -127,6 +127,7 @@ class Login_View : Fragment() {
                     }
 
                     startActivity(intent)
+                    requireActivity().finish()
 
                 } catch (e: Exception) {
                     progressBar3.visibility = View.GONE
@@ -160,7 +161,7 @@ class Login_View : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        try {
+       /* try {
 
             val jsonObject = sharedPreferences.getString("UserObject", "")
             val userObject = Gson().fromJson(jsonObject, User::class.java)
@@ -169,7 +170,7 @@ class Login_View : Fragment() {
                 if (userObject?.getRole() == "Student") {
                     val intent = Intent(requireActivity(), StudentActivity::class.java)
                     startActivity(intent)
-                } else {
+                } else if(userObject?.getRole()=="Teacher"){
                     val intent = Intent(requireActivity(), Dashboard::class.java)
                     startActivity(intent)
                 }
@@ -177,7 +178,7 @@ class Login_View : Fragment() {
 
         } catch (e: Exception) {
 
-        }
+        }*/
 
 
     }

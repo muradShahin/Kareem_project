@@ -11,11 +11,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.murad.kareem_school.R
 import com.murad.kareem_school.helpers.Status
 import com.murad.kareem_school.models.exams.Exam
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.exams_fragment_teacher.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ExamsTeacher : Fragment() {
@@ -24,6 +26,9 @@ class ExamsTeacher : Fragment() {
     val viewModel: ExamViewModel by viewModels()
     private val TAG = "ExamsTeacher"
     private lateinit var examsAdapter :ExamsAdapter
+
+    @Inject
+    lateinit var firebaseAuth:FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,8 +64,20 @@ class ExamsTeacher : Fragment() {
 
                     val querySnapshot = it.data
                     val listOfExams = querySnapshot?.toObjects(Exam::class.java)
+                    val listOfMyExams = ArrayList<Exam>()
 
-                    examsAdapter.submitList(listOfExams)
+                    if (listOfExams != null) {
+                        for (exam in listOfExams){
+
+                            if(exam.getTeacherEmail() == firebaseAuth.currentUser.email){
+
+                                listOfMyExams.add(exam)
+                            }
+
+                        }
+                    }
+
+                    examsAdapter.submitList(listOfMyExams)
                 }
 
             } catch (e: Exception) {

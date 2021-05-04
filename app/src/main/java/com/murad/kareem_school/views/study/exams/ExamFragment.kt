@@ -76,6 +76,13 @@ class ExamFragment : Fragment() {
                         examsAdapter.submitList(it)
                     })
 
+                    if (relationList.size > 0) {
+                        textView8.visibility = View.GONE
+                    } else {
+                        textView8.visibility = View.VISIBLE
+
+                    }
+
                 }
 
             } catch (e: Exception) {
@@ -98,12 +105,13 @@ class ExamFragment : Fragment() {
     }
 
 
-    fun startExam(exam:Exam){
+    fun startExam(exam: Exam) {
         try {
 
-            view?.findNavController()?.navigate(ExamFragmentDirections.actionExamFragmentToTakeExam(exam))
+            view?.findNavController()
+                ?.navigate(ExamFragmentDirections.actionExamFragmentToTakeExam(exam))
 
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Log.d(TAG, "startExam: ${e.message}")
         }
     }
