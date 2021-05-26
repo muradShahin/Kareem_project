@@ -2,6 +2,7 @@ package com.murad.kareem_school.views.auth.register
 
 import android.app.Activity
 import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -25,6 +26,7 @@ import com.murad.kareem_school.models.user_models.Student
 import com.shagi.materialdatepicker.date.DatePickerFragmentDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.create_user_view.*
+import java.lang.Exception
 
 @AndroidEntryPoint
 class CreateUserView : Fragment()  {
@@ -239,8 +241,15 @@ class CreateUserView : Fragment()  {
                 val result = it.status
 
                 if(result == Status.SUCCESS){
-                    Toast.makeText(requireContext(),"created successfully",Toast.LENGTH_SHORT).show()
-                    view?.findNavController()?.navigate(CreateUserViewDirections.actionCreateUserViewToLoginView())
+                    try {
+
+                        Toast.makeText(requireContext(),"created successfully",Toast.LENGTH_SHORT).show()
+                        view?.findNavController()?.navigate(CreateUserViewDirections.actionCreateUserViewToLoginView())
+
+                    }catch (e:Exception){
+                        Log.d(TAG, "startCreatingProcess: ")
+                    }
+
                 }
 
             })
